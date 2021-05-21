@@ -10,7 +10,7 @@ id bigint auto_increment,
 nome varchar(255),
 setor varchar(255),
 cargo varchar(255),
-salario decimal,
+salario decimal(5,2),
 primary key(id)
 );
 
@@ -24,8 +24,11 @@ insert into tb_funcionares(nome,setor,cargo,salario) values ("Juliana Prado","Fi
 
 -- Visualização da tabela
 select * from tb_funcionares;
-select * from tb_funcionares where salario > 2000;
-select * from tb_funcionares where salario < 2000;
+select * from tb_funcionares where salario > 2000.00;
+select * from tb_funcionares where salario < 2000.00;
+
+-- Alterar um tipo de variável na tabela
+alter table tb_funcionares modify salario decimal(6,2);
 
 -- Atualizando os dados da tabela
-update tb_funcionares set salario = 3500.00 where id = 1;
+update tb_funcionares set salario = 3500 where id = 5;
